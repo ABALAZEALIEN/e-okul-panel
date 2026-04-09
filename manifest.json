@@ -7,14 +7,14 @@
   "theme_color": "#1a3a8a",
   "icons": [
     {
-      "src": "icons/anasayfa.jpeg",
+      "src": "icons/app_icon.png",
       "sizes": "192x192",
-      "type": "image/jpeg"
+      "type": "image/png"
     },
     {
-      "src": "icons/anasayfa.jpeg",
+      "src": "icons/app_icon.png",
       "sizes": "512x512",
-      "type": "image/jpeg"
+      "type": "image/png"
     }
   ]
 }
