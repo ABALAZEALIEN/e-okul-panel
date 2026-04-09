@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Sistem Hatası</title>
+    <style>
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', sans-serif; 
+            background-color: #f8f9fa; 
+            display: flex; 
+            justify-content: center; 
+            align-items: center; 
+            height: 100vh; 
+            text-align: center;
+        }
+
+        .error-container {
+            padding: 30px;
+            max-width: 400px;
+        }
+
+        .error-icon {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 20px;
+            opacity: 0.6;
+        }
+
+        h1 {
+            font-size: 22px;
+            color: #1a3a8a;
+            margin-bottom: 10px;
+        }
+
+        p {
+            font-size: 14px;
+            color: #666;
+            line-height: 1.5;
+            margin-bottom: 25px;
+        }
+
+        .btn-retry {
+            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 14px;
+            display: inline-block;
+            box-shadow: 0 4px 10px rgba(26, 58, 138, 0.2);
+        }
+
+        .error-code {
+            margin-top: 30px;
+            font-size: 11px;
+            color: #aaa;
+            letter-spacing: 1px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="error-container">
+        <!-- e-Okul'un o klasik uyarı ikonuna benzer bir yapı -->
+        <svg class="error-icon" viewBox="0 0 24 24" fill="none" stroke="#1a3a8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"></path>
+            <line x1="12" y1="9" x2="12" y2="13"></line>
+            <line x1="12" y1="17" x2="12.01" y2="17"></line>
+        </svg>
+
+        <h1>Sunucu Hatası</h1>
+        <p>Şu anda sistemde yaşanan yoğunluk nedeniyle bilgilere ulaşılamıyor. Lütfen daha sonra tekrar deneyiniz.</p>
+        
+        <a href="menu.html" class="btn-retry">TAMAM</a>
+
+        <div class="error-code">HATA KODU: 500 - INTERNAL_SERVER_ERROR</div>
+    </div>
+
+</body>
+</html>

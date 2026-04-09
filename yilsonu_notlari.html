@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Yıl Sonu Notları</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; overflow-x: hidden; }
+        
+        /* Üst Profil Alanı (Modern e-Okul Stili) */
+        .header-bg {
+            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 50%, #4cc9f0 100%);
+            height: 180px;
+            padding: 25px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .profile-section { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
+        .user-info { display: flex; align-items: center; gap: 15px; }
+        .st-photo { width: 70px; height: 70px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3); object-fit: cover; }
+        .st-name { font-size: 16px; font-weight: bold; line-height: 1.2; }
+        .st-class { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+        
+        /* Sağ Üst İkonlar (Senin Gönderdiğin Dosyalar) */
+        .header-icons { display: flex; gap: 10px; }
+        .icon-btn { width: 35px; height: 35px; cursor: pointer; object-fit: contain; }
+
+        /* Ana İçerik Kartı */
+        .content-card {
+            background: white;
+            margin: -40px 15px 20px 15px;
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-height: 500px;
+        }
+
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 25px; }
+        .card-header h2 { font-size: 18px; margin: 0; color: #333; }
+        .back-btn { text-decoration: none; color: #666; font-size: 24px; font-weight: bold; }
+
+        /* Yıl Sonu Notu Listesi */
+        .list-item {
+            display: flex;
+            align-items: center;
+            padding: 18px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        /* BURASI DÜZELDİ: Senin Klasöründeki İkon Yolu */
+        .yılsonu-icon { 
+            width: 50px; 
+            height: 50px; 
+            margin-right: 15px; 
+            object-fit: contain; /* İkonun tamamının çerçeveye sığmasını sağlar */
+        }
+
+        .year-info { flex-grow: 1; font-size: 14px; color: #888; text-align: left; }
+        
+        /* Sınıf Seviyesi (Yeşil Renk) */
+        .class-level { 
+            font-weight: bold; 
+            font-size: 14px; 
+            color: #2ecc71; 
+            margin-left: auto; 
+            margin-right: 20px; 
+        }
+        
+        /* Yıl Sonu Notu Kutusu */
+        .score-box {
+            border: 2px solid #1a3a8a;
+            border-radius: 8px;
+            padding: 10px;
+            text-align: center;
+            width: 100px;
+        }
+        .score-label { display: block; font-size: 11px; color: #888; margin-bottom: 4px; }
+        .score-value { font-size: 17px; font-weight: bold; color: #1a3a8a; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-bg">
+        <div class="profile-section">
+            <div class="user-info">
+                <img src="assets/student_photo.jpg" class="st-photo">
+                <div>
+                    <div class="st-name">ABDULLAH ERKAM<br>KAHRAMAN</div>
+                    <div class="st-class">11.Sınıf - 93</div>
+                </div>
+            </div>
+            <div class="header-icons">
+                <img src="icons/öğrencideğiştirnot.jpeg" class="icon-btn" onclick="location.href='index.html'" title="Giriş Ekranına Git">
+                <img src="icons/anasayfa.jpeg" class="icon-btn" onclick="location.href='menu.html'" title="Ana Menüye Git">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <div class="card-header">
+            <h2>Yıl Sonu Notları</h2>
+            <a href="menu.html" class="back-btn" title="Geri Dön">↩</a>
+        </div>
+
+        <div class="list-item">
+            <img src="icons/yılsonu2.jpeg" class="yılsonu-icon" alt="Karne İkonu">
+            <div class="year-info">2018-2019</div>
+            <div class="class-level">4. Sınıf</div>
+            <div class="score-box">
+                <span class="score-label">Yıl Sonu Notu</span>
+                <span class="score-value">91,175</span>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="icons/yılsonu2.jpeg" class="yılsonu-icon" alt="Karne İkonu">
+            <div class="year-info">2019-2020</div>
+            <div class="class-level">5. Sınıf</div>
+            <div class="score-box">
+                <span class="score-label">Yıl Sonu Notu</span>
+                <span class="score-value">86,473</span>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="icons/yılsonu2.jpeg" class="yılsonu-icon" alt="Karne İkonu">
+            <div class="year-info">2020-2021</div>
+            <div class="class-level">6. Sınıf</div>
+            <div class="score-box">
+                <span class="score-label">Yıl Sonu Notu</span>
+                <span class="score-value">97,9524</span>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="icons/yılsonu2.jpeg" class="yılsonu-icon" alt="Karne İkonu">
+            <div class="year-info">2021-2022</div>
+            <div class="class-level">7. Sınıf</div>
+            <div class="score-box">
+                <span class="score-label">Yıl Sonu Notu</span>
+                <span class="score-value">95,1318</span>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="icons/yılsonu2.jpeg" class="yılsonu-icon" alt="Karne İkonu">
+            <div class="year-info">2022-2023</div>
+            <div class="class-level">8. Sınıf</div>
+            <div class="score-box">
+                <span class="score-label">Yıl Sonu Notu</span>
+                <span class="score-value">98,5588</span>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="icons/yılsonu2.jpeg" class="yılsonu-icon" alt="Karne İkonu">
+            <div class="year-info">2023-2024</div>
+            <div class="class-level">9. Sınıf</div>
+            <div class="score-box">
+                <span class="score-label">Yıl Sonu Notu</span>
+                <span class="score-value">80,9526</span>
+            </div>
+        </div>
+
+        <div class="list-item">
+            <img src="icons/yılsonu2.jpeg" class="yılsonu-icon" alt="Karne İkonu">
+            <div class="year-info">2024-2025</div>
+            <div class="class-level">10. Sınıf</div>
+            <div class="score-box">
+                <span class="score-label">Yıl Sonu Notu</span>
+                <span class="score-value">84,2293</span>
+            </div>
+        </div>
+
+        </div>
+
+</body>
+</html>

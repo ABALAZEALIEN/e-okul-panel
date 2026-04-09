@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Şube Yazılı Ortalamaları</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; }
+        
+        /* Üst Profil Alanı */
+        .header-bg {
+            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 50%, #4cc9f0 100%);
+            height: 180px;
+            padding: 25px 20px;
+            color: white;
+            position: relative;
+        }
+
+        .profile-section { display: flex; align-items: center; justify-content: space-between; }
+        .user-info { display: flex; align-items: center; gap: 15px; }
+        .st-photo { width: 70px; height: 70px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3); object-fit: cover; }
+        .st-name { font-size: 16px; font-weight: bold; line-height: 1.2; }
+        .st-class { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+        
+        /* GÜNCELLENEN İKONLAR */
+        .header-icons { display: flex; gap: 10px; }
+        .icon-btn { width: 35px; height: 35px; cursor: pointer; object-fit: contain; }
+
+        /* Ana Kart */
+        .content-card {
+            background: white;
+            margin: -40px 15px 20px 15px;
+            border-radius: 15px;
+            padding: 20px;
+            position: relative;
+            z-index: 10;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-height: 500px;
+        }
+
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .card-header h2 { font-size: 18px; margin: 0; color: #333; }
+        .back-btn { text-decoration: none; color: #666; font-size: 24px; }
+
+        .period-selector { display: flex; gap: 10px; margin-bottom: 25px; }
+        .period-btn { flex: 1; padding: 12px; border-radius: 10px; border: none; font-weight: bold; font-size: 14px; background-color: #f0f2f5; color: #a0a0a0; }
+
+        .subject-block { margin-bottom: 25px; }
+        .subject-name { font-size: 15px; font-weight: bold; color: #333; margin-bottom: 10px; display: block; }
+        
+        table { width: 100%; border-collapse: collapse; background: #f9fbff; border-radius: 8px; overflow: hidden; }
+        th { background: #f0f4ff; color: #8e99af; font-size: 12px; padding: 10px; text-align: center; border: 1px solid #eef2ff; }
+        td { padding: 12px; text-align: center; border: 1px solid #eef2ff; font-size: 14px; font-weight: bold; color: #1a3a8a; }
+        
+        .status-icon { width: 25px; height: auto; object-fit: contain; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header-bg">
+        <div class="profile-section">
+            <div class="user-info">
+                <img src="assets/student_photo.jpg" class="st-photo">
+                <div>
+                    <div class="st-name">ABDULLAH ERKAM<br>KAHRAMAN</div>
+                    <div class="st-class">11.Sınıf - 93</div>
+                </div>
+            </div>
+            <div class="header-icons">
+                <!-- SENİN JPEGLERİN BURADA -->
+                <img src="icons/öğrencideğiştirnot.jpeg" class="icon-btn" onclick="location.href='index.html'">
+                <img src="icons/anasayfa.jpeg" class="icon-btn" onclick="location.href='menu.html'">
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <div class="card-header">
+            <h2>Şube Yazılı Ortalamaları</h2>
+            <a href="menu.html" class="back-btn">↩</a>
+        </div>
+
+        <div class="period-selector">
+            <button class="period-btn">1. Dönem</button>
+            <button class="period-btn">2. Dönem</button>
+        </div>
+
+        <div class="subject-block">
+            <span class="subject-name">Felsefe</span>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Sınav Notu</th>
+                        <th>Şube Ortalaması</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="color: #8e99af; font-weight: normal; width: 30px;">1.</td>
+                        <td>55</td>
+                        <td>75,60</td>
+                        <td><img src="icons/kırmızı.jpeg" class="status-icon"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="subject-block">
+            <span class="subject-name">Seçmeli İkinci Yabancı Dil</span>
+            <table>
+                <thead>
+                    <tr>
+                        <th></th>
+                        <th>Sınav Notu</th>
+                        <th>Şube Ortalaması</th>
+                        <th>Durum</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="color: #8e99af; font-weight: normal; width: 30px;">1.</td>
+                        <td>83,25</td>
+                        <td>96,29</td>
+                        <td><img src="icons/kırmızı.jpeg" class="status-icon"></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

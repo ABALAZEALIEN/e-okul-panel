@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>e-Okul Veli Bilgilendirme Sistemi</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; overflow-x: hidden; }
+        
+        .top-section {
+            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 50%, #4cc9f0 100%);
+            height: 280px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            color: white;
+            text-align: center;
+        }
+
+        .meb-logo {
+            width: 120px;
+            height: auto;
+            margin-bottom: 15px;
+            z-index: 2;
+        }
+
+        .header-title h1 { margin: 0; font-size: 18px; font-weight: bold; letter-spacing: 1px; }
+        .header-title p { margin: 5px 0 0; font-size: 12px; opacity: 0.9; }
+
+        .wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: white;
+            clip-path: ellipse(75% 100% at 50% 100%);
+        }
+
+        .content-container { padding: 0 20px; margin-top: -40px; position: relative; z-index: 10; }
+        
+        .student-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            text-align: center;
+        }
+
+        .card-label { color: #888; font-weight: bold; font-size: 16px; margin-bottom: 20px; display: block; }
+
+        .student-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            border: 1px solid #f0f0f0;
+            border-radius: 12px;
+            text-decoration: none;
+            color: inherit;
+            transition: 0.2s;
+        }
+
+        .student-item:active { background-color: #f7f9fc; transform: scale(0.98); }
+
+        .st-photo { width: 60px; height: 60px; border-radius: 50%; object-fit: cover; margin-right: 15px; }
+        
+        .st-name { flex-grow: 1; font-weight: bold; font-size: 15px; color: #4a4a4a; text-align: left; }
+        .arrow { color: #ccc; margin-right: 10px; font-size: 20px; }
+
+        .check-icon { width: 35px; height: 35px; }
+
+        .hint { color: #aaa; font-size: 12px; margin-top: 15px; }
+
+        .footer-text {
+            text-align: center;
+            color: #999;
+            font-size: 11px;
+            margin-top: 30px;
+            padding: 0 30px;
+            line-height: 1.5;
+        }
+
+        .floating-menu {
+            position: fixed;
+            bottom: 25px;
+            right: 20px;
+            width: 55px;
+            height: 55px;
+            background: #1a3a8a;
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            gap: 4px;
+            box-shadow: 0 4px 12px rgba(26, 58, 138, 0.4);
+        }
+        .bar { width: 22px; height: 2px; background: white; border-radius: 1px; }
+    </style>
+</head>
+<body>
+
+    <div class="top-section">
+        <!-- MEB LOGOSU (Şeffaf PNG İnternetten En Sağlam Link) -->
+        <img src="https://e-okul.meb.gov.tr/logolar/meb_logo.png" class="meb-logo" alt="MEB Logo" onerror="this.src='https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/T.C._Mill%C3%AE_E%C4%9Fitim_Bakanl%C4%B1%C4%9F%C4%B1_logo.svg/512px-T.C._Mill%C3%AE_E%C4%9Fitim_Bakanl%C4%B1%C4%9F%C4%B1_logo.svg.png'">
+        
+        <div class="header-title">
+            <h1>MİLLÎ EĞİTİM BAKANLIĞI</h1>
+            <p>e-OKUL VELİ BİLGİLENDİRME SİSTEMİ</p>
+        </div>
+        <div class="wave"></div>
+    </div>
+
+    <div class="content-container">
+        <div class="student-card">
+            <span class="card-label">Öğrenci Listesi</span>
+            
+            <a href="menu.html" class="student-item">
+                <img src="assets/student_photo.jpg" class="st-photo">
+                <div class="st-name">Abdullah Erkam<br>Kahraman</div>
+                <div class="arrow">›</div>
+                <!-- YEŞİL TİK (Direkt SVG Kod olarak gömdüm, asla bozulmaz) -->
+                <svg class="check-icon" viewBox="0 0 512 512">
+                    <path fill="#4CAF50" d="M256 0C114.6 0 0 114.6 0 256s114.6 256 256 256 256-114.6 256-256S397.4 0 256 0z"/>
+                    <path fill="#ffffff" d="M385.4 167.6c-6.2-6.2-16.4-6.2-22.6 0L208.4 322l-64.8-64.8c-6.2-6.2-16.4-6.2-22.6 0s-6.2 16.4 0 22.6l76.1 76.1c6.2 6.2 16.4 6.2 22.6 0l165.7-165.7c6.3-6.2 6.3-16.4 0-22.6z"/>
+                </svg>
+            </a>
+
+            <div class="hint">* Öğrenciyi silmek için sola kaydırınız.</div>
+        </div>
+
+        <div class="footer-text">
+            T.C. MEB Bilgi İşlem Genel Müdürlüğü Tarafından Geliştirilmiştir.
+        </div>
+    </div>
+
+    <div class="floating-menu">
+        <div class="bar"></div>
+        <div class="bar"></div>
+        <div class="bar"></div>
+    </div>
+
+</body>
+</html>

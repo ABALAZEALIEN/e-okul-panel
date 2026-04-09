@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Devamsızlık Bilgileri</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; color: #333; overflow-x: hidden; }
+        
+        .header {
+            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 100%);
+            height: 160px;
+            padding: 20px;
+            color: white;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .user-section { display: flex; align-items: center; gap: 15px; }
+        .user-img { width: 65px; height: 65px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3); object-fit: cover; }
+        .user-meta { line-height: 1.4; }
+        .user-name { font-size: 16px; font-weight: bold; text-transform: uppercase; }
+        .user-class { font-size: 12px; opacity: 0.8; }
+
+        .header-icons { position: absolute; right: 20px; top: 30px; display: flex; gap: 12px; }
+        .nav-btn { width: 32px; height: 32px; cursor: pointer; object-fit: contain; }
+
+        .content-card {
+            background: white;
+            margin: -35px 15px 20px 15px;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            padding: 20px;
+            min-height: 450px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .card-header { 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            margin-bottom: 25px; 
+            padding: 0 5px;
+        }
+        
+        .card-title { font-size: 18px; font-weight: bold; color: #333; }
+        
+        /* NOTLAR SAYFASINDAKİ O İNCE VE KIVRIMLI OKUN AYARI */
+        .return-arrow {
+            font-size: 28px; /* Biraz daha belirgin olması için büyüttüm */
+            color: #333;
+            cursor: pointer;
+            font-weight: normal; /* İnce görünmesi için */
+            text-decoration: none;
+            user-select: none;
+            line-height: 1;
+        }
+
+        .summary-box {
+            border: 2px solid #1a3a8a;
+            border-radius: 8px;
+            display: flex;
+            margin-bottom: 25px;
+            background-color: #f8faff;
+        }
+        .summary-item { flex: 1; text-align: center; padding: 12px 5px; }
+        .summary-item:first-child { border-right: 1px solid #1a3a8a; }
+        .summary-label { font-size: 11px; color: #666; font-weight: bold; margin-bottom: 3px; }
+        .summary-value { font-size: 17px; color: #1a3a8a; font-weight: 800; }
+
+        .absence-list { margin-top: 10px; }
+        .absence-row {
+            display: flex;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+        }
+        .absence-row:last-child { border-bottom: none; }
+        
+        .calendar-icon { width: 35px; height: 35px; margin-right: 15px; }
+        .date-info { flex-grow: 1; }
+        .date-text { font-size: 14px; color: #444; font-weight: 500; }
+        .status-text { font-size: 14px; font-weight: bold; }
+        .status-full { color: #2ecc71; }
+        .status-late { color: #1abc9c; }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="header-icons">
+            <img src="icons/öğrencideğiştir.jpeg" class="nav-btn">
+            <img src="icons/anasayfa.jpeg" class="nav-btn">
+        </div>
+        <div class="user-section">
+            <img src="assets/student_photo.jpg" class="user-img">
+            <div class="user-meta">
+                <div class="user-name">ABDULLAH ERKAM KAHRAMAN</div>
+                <div class="user-class">11.Sınıf - 93</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <div class="card-header">
+            <div class="card-title">Devamsızlık Bilgileri</div>
+            <!-- Orijinal ince kıvrımlı ok -->
+            <div class="return-arrow" onclick="history.back()">&#8617;</div>
+        </div>
+
+        <div class="summary-box">
+            <div class="summary-item">
+                <div class="summary-label">Özürlü Devamsızlık</div>
+                <div class="summary-value">0 Gün</div>
+            </div>
+            <div class="summary-item">
+                <div class="summary-label">Özürsüz Devamsızlık</div>
+                <div class="summary-value">3 Gün</div>
+            </div>
+        </div>
+
+        <div class="absence-list">
+            <div class="absence-row">
+                <img src="icons/devamsızlık2.jpeg" class="calendar-icon">
+                <div class="date-info"><div class="date-text">07 Nisan 2026 Salı</div></div>
+                <div class="status-text status-full">Tam Gün</div>
+            </div>
+            <div class="absence-row">
+                <img src="icons/devamsızlık2.jpeg" class="calendar-icon">
+                <div class="date-info"><div class="date-text">31 Mart 2026 Salı</div></div>
+                <div class="status-text status-full">Tam Gün</div>
+            </div>
+            <div class="absence-row">
+                <img src="icons/devamsızlık2.jpeg" class="calendar-icon">
+                <div class="date-info"><div class="date-text">24 Şubat 2026 Salı</div></div>
+                <div class="status-text status-full">Tam Gün</div>
+            </div>
+            <div class="absence-row">
+                <img src="icons/devamsızlık2.jpeg" class="calendar-icon">
+                <div class="date-info"><div class="date-text">02 Aralık 2025 Salı</div></div>
+                <div class="status-text status-late">Geç</div>
+            </div>
+            <div class="absence-row">
+                <img src="icons/devamsızlık2.jpeg" class="calendar-icon">
+                <div class="date-info"><div class="date-text">28 Kasım 2025 Cuma</div></div>
+                <div class="status-text status-late">Geç</div>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

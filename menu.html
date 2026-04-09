@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>e-Okul VBS Menü</title>
+    <style>
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f0f2f5; color: #333; overflow-x: hidden; }
+        
+        .header {
+            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 100%);
+            height: 220px;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+
+        .top-nav { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+        .nav-icon-box { display: flex; flex-direction: column; align-items: center; gap: 5px; cursor: pointer; }
+        .nav-img { width: 45px; height: 45px; object-fit: contain; }
+        .nav-text { font-size: 11px; font-weight: 500; }
+
+        .user-photo { width: 85px; height: 110px; border-radius: 8px; border: 2px solid rgba(255,255,255,0.4); object-fit: cover; margin: 0 auto 10px; display: block; }
+        .user-info-text { font-weight: bold; font-size: 16px; margin-bottom: 4px; }
+        .user-sub-text { font-size: 13px; opacity: 0.9; }
+
+        /* ÜST KARE GRUP */
+        .grid-container {
+            background: white;
+            margin: -30px 15px 15px 15px;
+            border-radius: 12px;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            overflow: hidden;
+            border: 1px solid #eee;
+        }
+
+        .grid-item {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px;
+            text-decoration: none;
+            border: 0.5px solid #f0f0f0;
+        }
+
+        .grid-icon { width: 100%; height: auto; max-height: 80px; object-fit: contain; }
+
+        /* ALT LİSTE GRUBU */
+        .list-container { 
+            background: white; 
+            margin: 0 15px 20px 15px; 
+            border-radius: 12px; 
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05); 
+            overflow: hidden; 
+        }
+
+        .list-item {
+            display: block;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-bottom: 1px solid #f5f5f5;
+            transition: background 0.2s;
+        }
+
+        .list-item:last-child { border-bottom: none; }
+        .list-item:active { background-color: #f9f9f9; }
+
+        .list-icon { 
+            width: 100%; 
+            height: auto; 
+            max-height: 50px; 
+            display: block;
+            object-fit: contain; 
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <div class="top-nav">
+            <div class="nav-icon-box" onclick="location.href='hata.html'">
+                <img src="icons/bildirimler.jpeg" class="nav-img">
+                <span class="nav-text">Bildirimler</span>
+            </div>
+            <img src="assets/student_photo.jpg" class="user-photo">
+            <div class="nav-icon-box" onclick="location.href='index.html'">
+                <img src="icons/öğrencideğiştir.jpeg" class="nav-img">
+                <span class="nav-text">Öğrenci Değiştir</span>
+            </div>
+        </div>
+        <div class="user-info-text">Abdullah Erkam Kahraman</div>
+        <div class="user-sub-text">11.Sınıf - 93</div>
+    </div>
+
+    <!-- ÜST GRUP (BAĞLANTILAR GÜNCELLENDİ) -->
+    <div class="grid-container">
+        <a href="notlar.html" class="grid-item">
+            <img src="icons/notlar.jpeg" class="grid-icon">
+        </a>
+        <a href="devamsizlik.html" class="grid-item">
+            <img src="icons/devamsızlık.jpeg" class="grid-icon">
+        </a>
+        <a href="hata.html" class="grid-item"> <!-- Klasörde ders programı dosyası yok, bu hata kalsın -->
+            <img src="icons/dersprogramı.jpeg" class="grid-icon">
+        </a>
+        <a href="hata.html" class="grid-item"> <!-- Klasörde sınav tarihi dosyası yok -->
+            <img src="icons/sınavtarihi.jpeg" class="grid-icon">
+        </a>
+        <a href="sube_ortalama.html" class="grid-item">
+            <img src="icons/yazılıortalama.jpeg" class="grid-icon">
+        </a>
+        <a href="yilsonu_notlari.html" class="grid-item">
+            <img src="icons/yılsonunot.jpeg" class="grid-icon">
+        </a>
+    </div>
+
+    <!-- ALT LİSTE -->
+    <div class="list-container">
+        <a href="devamsizlik.html" class="list-item">
+            <img src="icons/dersdevamsızlık.jpeg" class="list-icon">
+        </a>
+        <a href="hata.html" class="list-item">
+            <img src="icons/nakil.jpeg" class="list-icon">
+        </a>
+        <a href="hata.html" class="list-item">
+            <img src="icons/sorumluluk.jpeg" class="list-icon">
+        </a>
+        <a href="hata.html" class="list-item">
+            <img src="icons/aldığıbelge.jpeg" class="list-icon">
+        </a>
+    </div>
+
+</body>
+</html>
