@@ -1,6 +1,6 @@
 {
   "name": "e-Okul VBS",
-  "short_name": "e-Okul",
+  "short_name": "eOkul VBS",
   "start_url": "./index.html",
   "display": "standalone",
   "orientation": "portrait",
