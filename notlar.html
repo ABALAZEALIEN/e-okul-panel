@@ -1,183 +1,64 @@
 <!DOCTYPE html>
 <html lang="tr">
 <head>
-<link rel="manifest" href="manifest.json">
-<meta name="apple-mobile-web-app-capable" content="yes">
-<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-<meta name="apple-mobile-web-app-title" content="e-Okul VBS">
-<link rel="apple-touch-icon" href="icons/app_icon.png">
-<meta name="theme-color" content="#1565C0">
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Not Bilgileri</title>
     <style>
-        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; }
-        
-        /* Üst Profil Alanı */
-        .header-bg {
-            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 50%, #4cc9f0 100%);
-            height: 180px;
-            padding: 25px 20px;
-            color: white;
-            position: relative;
-        }
-
-        .profile-section { display: flex; align-items: center; justify-content: space-between; margin-top: 10px; }
-        .user-info { display: flex; align-items: center; gap: 12px; }
-        .st-photo { width: 75px; height: 75px; border-radius: 12px; border: 2px solid rgba(255,255,255,0.3); object-fit: cover; }
-        .st-name { font-size: 16px; font-weight: bold; line-height: 1.2; }
-        .st-class { font-size: 13px; opacity: 0.9; margin-top: 4px; }
-        
-        .header-icons { display: flex; gap: 10px; }
-        .icon-btn { width: 38px; height: 38px; cursor: pointer; object-fit: contain; }
-
-        /* Ana İçerik Kartı */
-        .content-card {
-            background: white;
-            margin: -40px 12px 20px 12px;
-            border-radius: 12px;
-            padding: 15px;
-            position: relative;
-            z-index: 10;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-        }
-
-        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; padding: 5px; }
-        .card-header h2 { font-size: 18px; margin: 0; color: #333; font-weight: bold; }
-        .back-btn { text-decoration: none; color: #333; font-size: 24px; }
-
-        /* Dönem Butonları */
-        .period-selector { display: flex; gap: 15px; margin-bottom: 25px; }
-        .period-btn { flex: 1; padding: 15px; border-radius: 10px; border: none; background: #f0f2f5; color: #8e99af; font-weight: bold; font-size: 14px; cursor: pointer; }
-        .period-btn.active { background: #fff; box-shadow: 0 2px 8px rgba(0,0,0,0.1); color: #333; }
-
-        /* Mobil Ders Bloğu */
-        .subject-block { margin-bottom: 35px; }
-        .subject-title { font-size: 15px; font-weight: bold; color: #333; margin-bottom: 12px; display: block; }
-        
-        .mobile-table { width: 100%; border-collapse: collapse; border: 1px solid #eef2ff; border-radius: 8px; overflow: hidden; }
-        .mobile-table th { background: #f8faff; color: #8e99af; font-size: 13px; padding: 12px; border: 1px solid #eef2ff; font-weight: bold; }
-        .mobile-table td { padding: 15px; text-align: center; border: 1px solid #eef2ff; font-size: 15px; font-weight: bold; }
-        
-        .row-label { color: #8e99af; font-weight: normal !important; text-align: left !important; width: 25%; }
-        .score-val { color: #1a3a8a; }
-        
-        .score-footer { background: #f8faff; border: 1px solid #eef2ff; border-top: none; display: flex; justify-content: flex-end; align-items: center; padding: 10px 15px; gap: 40px; }
-        .puan-label { color: #8e99af; font-size: 13px; font-weight: bold; }
-        .puan-val { color: #2ecc71; font-size: 18px; font-weight: bold; }
-
-        /* Alt Ortalama Alanı */
-        .avg-section { 
-            border-top: 1px solid #eee; 
-            margin-top: 20px; 
-            padding-top: 20px; 
-            display: flex; 
-            align-items: center; 
-            gap: 15px;
-        }
-        .avg-icon { width: 45px; height: 45px; object-fit: contain; opacity: 0.7; }
-        .avg-text-wrap { flex-grow: 1; }
-        .avg-title { font-size: 14px; color: #888; display: block; font-weight: 500; }
-        .avg-desc { font-size: 11px; color: #aaa; }
-        .avg-total { font-size: 18px; font-weight: bold; color: #2ecc71; margin-left: auto; }
-
+        body { font-family: sans-serif; background-color: #f8f9fb; margin: 0; padding: 0; }
+        .header { background-color: #102a8b; color: white; padding: 20px; display: flex; align-items: center; }
+        .header img { width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; border: 2px solid white; }
+        .not-container { padding: 15px; }
+        .card { background: white; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
+        .lesson-title { font-weight: bold; color: #333; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
+        table { width: 100%; border-collapse: collapse; text-align: center; }
+        th { color: #888; font-size: 12px; padding: 5px; }
+        td { padding: 10px; font-weight: bold; color: #102a8b; }
+        .ortalama-row { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 15px; background: white; border-radius: 10px; }
+        .ort-val { color: #4caf50; font-weight: bold; font-size: 18px; }
     </style>
 </head>
 <body>
-
-    <div class="header-bg">
-        <div class="profile-section">
-            <div class="user-info">
-                <img src="assets/student_photo.jpg" class="st-photo">
-                <div>
-                    <div class="st-name">ABDULLAH ERKAM<br>KAHRAMAN</div>
-                    <div class="st-class">11.Sınıf - 93</div>
-                </div>
-            </div>
-            <div class="header-icons">
-                <img src="icons/öğrencideğiştirnot.jpeg" class="icon-btn" onclick="location.href='index.html'">
-                <img src="icons/anasayfa.jpeg" class="icon-btn" onclick="location.href='menu.html'">
-            </div>
+    <div class="header">
+        <img src="assets/student_photo.jpg">
+        <div>
+            <div style="font-weight: bold; font-size: 16px;">ABDULLAH ERKAM KAHRAMAN</div>
+            <div style="font-size: 13px; opacity: 0.8;">11. Sınıf - 93</div>
         </div>
     </div>
 
-    <div class="content-card">
-        <div class="card-header">
-            <h2>Not Bilgileri</h2>
-            <a href="menu.html" class="back-btn">↩</a>
-        </div>
-
-        <div class="period-selector">
-            <!-- BURASI AYARLANDI: 1. Döneme basınca hata sayfasına atar -->
-            <button class="period-btn" onclick="location.href='hata.html'">1.Dönem</button>
-            <button class="period-btn active">2.Dönem</button>
-        </div>
-
-        <!-- Felsefe -->
-        <div class="subject-block">
-            <span class="subject-title">Felsefe (2 Saat)</span>
-            <table class="mobile-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>1.</th>
-                        <th>2.</th>
-                        <th>3.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="row-label">Sınav</td>
-                        <td class="score-val">55</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
+    <div class="not-container">
+        <div class="card">
+            <div class="lesson-title">Felsefe (2 Saat)</div>
+            <table>
+                <tr><th>1.</th><th>2.</th><th>3.</th><th>Puanı</th></tr>
+                <tr><td>55</td><td></td><td></td><td style="color:#4caf50">55</td></tr>
             </table>
-            <div class="score-footer">
-                <span class="puan-label">Puanı</span>
-                <span class="puan-val">55</span>
-            </div>
         </div>
 
-        <!-- Seçmeli İkinci Yabancı Dil -->
-        <div class="subject-block">
-            <span class="subject-title">Seçmeli İkinci Yabancı Dil (2 Saat)</span>
-            <table class="mobile-table">
-                <thead>
-                    <tr>
-                        <th></th>
-                        <th>1.</th>
-                        <th>2.</th>
-                        <th>3.</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td class="row-label">Sınav</td>
-                        <td class="score-val">83,25</td>
-                        <td></td>
-                        <td></td>
-                    </tr>
-                </tbody>
+        <div class="card">
+            <div class="lesson-title">Seçmeli İkinci Yabancı Dil (2 Saat)</div>
+            <table>
+                <tr><th>1.</th><th>2.</th><th>3.</th><th>Puanı</th></tr>
+                <tr><td>83,25</td><td></td><td></td><td style="color:#4caf50">83.25</td></tr>
             </table>
-            <div class="score-footer">
-                <span class="puan-label">Puanı</span>
-                <span class="puan-val">83.25</span>
-            </div>
         </div>
 
-        <!-- Alt Ortalama Kısmı -->
-        <div class="avg-section">
-            <img src="https://cdn-icons-png.flaticon.com/512/3589/3589030.png" class="avg-icon">
-            <div class="avg-text-wrap">
-                <span class="avg-title">2. Dönem Not Ortalaması</span>
-                <span class="avg-desc">Ders saati ağırlığına göre hesaplanmıştır</span>
-            </div>
-            <div class="avg-total">69.1250</div>
+        <div class="card">
+            <div class="lesson-title">Yabancı Dil (4 Saat)</div>
+            <table>
+                <tr><th>1.</th><th>2.</th><th>3.</th><th>Puanı</th></tr>
+                <tr><td>100</td><td></td><td></td><td style="color:#4caf50">100</td></tr>
+            </table>
         </div>
 
+        <div class="ortalama-row">
+            <div style="display:flex; align-items:center;">
+                <img src="icons/yaziliortalama.jpeg" width="75" style="margin-right:10px;">
+                <div style="font-size:13px; color:#666;">2. Dönem Not Ortalaması<br><small>Ders saati ağırlığına göre</small></div>
+            </div>
+            <div class="ort-val">84.5625</div>
+        </div>
     </div>
-
 </body>
 </html>
