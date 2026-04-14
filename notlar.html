@@ -2,63 +2,145 @@
 <html lang="tr">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>Not Bilgileri</title>
     <style>
-        body { font-family: sans-serif; background-color: #f8f9fb; margin: 0; padding: 0; }
-        .header { background-color: #102a8b; color: white; padding: 20px; display: flex; align-items: center; }
-        .header img { width: 60px; height: 60px; border-radius: 50%; margin-right: 15px; border: 2px solid white; }
-        .not-container { padding: 15px; }
-        .card { background: white; border-radius: 10px; padding: 15px; margin-bottom: 20px; box-shadow: 0 2px 10px rgba(0,0,0,0.05); }
-        .lesson-title { font-weight: bold; color: #333; margin-bottom: 10px; border-bottom: 1px solid #eee; padding-bottom: 5px; }
-        table { width: 100%; border-collapse: collapse; text-align: center; }
-        th { color: #888; font-size: 12px; padding: 5px; }
-        td { padding: 10px; font-weight: bold; color: #102a8b; }
-        .ortalama-row { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; padding: 15px; background: white; border-radius: 10px; }
-        .ort-val { color: #4caf50; font-weight: bold; font-size: 18px; }
+        body { margin: 0; padding: 0; font-family: 'Segoe UI', sans-serif; background-color: #f8f9fa; color: #333; overflow-x: hidden; }
+        
+        /* HEADER */
+        .header-bg {
+            background: linear-gradient(135deg, #1a3a8a 0%, #2955c8 50%, #4cc9f0 100%);
+            height: 180px; padding: 25px 20px; color: white; position: relative;
+        }
+        .profile-section { display: flex; align-items: center; justify-content: space-between; }
+        .user-info { display: flex; align-items: center; gap: 15px; }
+        .st-photo { width: 70px; height: 70px; border-radius: 10px; border: 2px solid rgba(255,255,255,0.3); object-fit: cover; }
+        .st-name { font-size: 16px; font-weight: bold; line-height: 1.2; }
+        .st-class { font-size: 13px; opacity: 0.9; margin-top: 4px; }
+        .header-icons { display: flex; gap: 10px; }
+        .icon-btn { width: 35px; height: 35px; cursor: pointer; }
+
+        .content-card {
+            background: white; margin: -40px 15px 20px 15px; border-radius: 15px;
+            padding: 20px; position: relative; z-index: 10; box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+        }
+
+        .card-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+        .card-header h2 { font-size: 18px; margin: 0; color: #333; font-weight: bold; }
+        .back-btn { text-decoration: none; color: #666; font-size: 24px; }
+
+        .period-selector { display: flex; gap: 10px; margin-bottom: 25px; }
+        .period-btn { 
+            flex: 1; padding: 12px; border-radius: 10px; border: none; 
+            font-weight: bold; font-size: 14px; text-align: center; 
+            text-decoration: none; display: block;
+        }
+        .btn-passive { background-color: #f0f2f5; color: #a0a0a0; }
+        .btn-active { background-color: #e2e6f0; color: #666; }
+
+        /* NOT TABLOLARI */
+        .subject-block { margin-bottom: 30px; border-bottom: 1px solid #eee; padding-bottom: 15px; }
+        .subject-name { font-size: 15px; font-weight: bold; color: #333; margin-bottom: 12px; display: block; }
+        table { width: 100%; border-collapse: collapse; background: #fff; border: 1px solid #eef2ff; }
+        th { background: #f8faff; color: #8e99af; font-size: 13px; padding: 10px; border: 1px solid #eef2ff; }
+        td { padding: 12px; text-align: center; border: 1px solid #eef2ff; font-size: 15px; font-weight: bold; color: #1a3a8a; }
+        .row-label { background: #f8faff; color: #8e99af; width: 20%; text-align: left; padding-left: 15px; }
+        .puan-label { color: #8e99af; font-size: 13px; text-align: right; padding-right: 15px; }
+        .puan-val { color: #4caf50 !important; font-size: 16px; }
+
+        /* ORTALAMA */
+        .ortalama-footer { display: flex; justify-content: space-between; align-items: center; margin-top: 20px; }
+        .ort-left { display: flex; align-items: center; gap: 12px; }
+        .ort-left img { width: 50px; height: 50px; }
+        .ort-text { font-size: 11px; color: #666; line-height: 1.4; }
+        .ort-val { color: #4caf50; font-weight: 800; font-size: 18px; }
     </style>
 </head>
 <body>
-    <div class="header">
-        <img src="assets/student_photo.jpg">
-        <div>
-            <div style="font-weight: bold; font-size: 16px;">ABDULLAH ERKAM KAHRAMAN</div>
-            <div style="font-size: 13px; opacity: 0.8;">11. Sınıf - 93</div>
-        </div>
-    </div>
 
-    <div class="not-container">
-        <div class="card">
-            <div class="lesson-title">Felsefe (2 Saat)</div>
-            <table>
-                <tr><th>1.</th><th>2.</th><th>3.</th><th>Puanı</th></tr>
-                <tr><td>55</td><td></td><td></td><td style="color:#4caf50">55</td></tr>
-            </table>
-        </div>
-
-        <div class="card">
-            <div class="lesson-title">Seçmeli İkinci Yabancı Dil (2 Saat)</div>
-            <table>
-                <tr><th>1.</th><th>2.</th><th>3.</th><th>Puanı</th></tr>
-                <tr><td>83,25</td><td></td><td></td><td style="color:#4caf50">83.25</td></tr>
-            </table>
-        </div>
-
-        <div class="card">
-            <div class="lesson-title">Yabancı Dil (4 Saat)</div>
-            <table>
-                <tr><th>1.</th><th>2.</th><th>3.</th><th>Puanı</th></tr>
-                <tr><td>100</td><td></td><td></td><td style="color:#4caf50">100</td></tr>
-            </table>
-        </div>
-
-        <div class="ortalama-row">
-            <div style="display:flex; align-items:center;">
-                <img src="icons/yaziliortalama.jpeg" width="75" style="margin-right:10px;">
-                <div style="font-size:13px; color:#666;">2. Dönem Not Ortalaması<br><small>Ders saati ağırlığına göre</small></div>
+    <div class="header-bg">
+        <div class="profile-section">
+            <div class="user-info">
+                <img src="assets/student_photo.jpg" class="st-photo">
+                <div>
+                    <div class="st-name">ABDULLAH ERKAM<br>KAHRAMAN</div>
+                    <div class="st-class">11.Sınıf - 93</div>
+                </div>
             </div>
-            <div class="ort-val">84.5625</div>
+            <div class="header-icons">
+                <img src="icons/öğrencideğiştirnot.jpeg" class="icon-btn" onclick="location.href='index.html'">
+                <img src="icons/anasayfa.jpeg" class="icon-btn" onclick="location.href='menu.html'">
+            </div>
         </div>
     </div>
+
+    <div class="content-card">
+        <div class="card-header">
+            <h2>Not Bilgileri</h2>
+            <a href="menu.html" class="back-btn">↩</a>
+        </div>
+
+        <div class="period-selector">
+            <a href="hata.html" class="period-btn btn-passive">1. Dönem</a>
+            <div class="period-btn btn-active">2. Dönem</div>
+        </div>
+
+        <div class="subject-block">
+            <span class="subject-name">Felsefe (2 Saat)</span>
+            <table>
+                <tr><th style="background:transparent; border:none;"></th><th>1.</th><th>2.</th><th>3.</th></tr>
+                <tr><td class="row-label">Sınav</td><td>55</td><td></td><td></td></tr>
+                <tr><td colspan="3" class="puan-label">Puanı</td><td class="puan-val">55</td></tr>
+            </table>
+        </div>
+
+        <div class="subject-block">
+            <span class="subject-name">Seçmeli Biyoloji (4 Saat)</span>
+            <table>
+                <tr><th style="background:transparent; border:none;"></th><th>1.</th><th>2.</th><th>3.</th></tr>
+                <tr><td class="row-label">Sınav</td><td>60</td><td></td><td></td></tr>
+                <tr><td colspan="3" class="puan-label">Puanı</td><td class="puan-val">60</td></tr>
+            </table>
+        </div>
+
+        <div class="subject-block">
+            <span class="subject-name">Seçmeli İkinci Yabancı Dil (2 Saat)</span>
+            <table>
+                <tr><th style="background:transparent; border:none;"></th><th>1.</th><th>2.</th><th>3.</th></tr>
+                <tr><td class="row-label">Sınav</td><td>83,25</td><td></td><td></td></tr>
+                <tr><td colspan="3" class="puan-label">Puanı</td><td class="puan-val">83,25</td></tr>
+            </table>
+        </div>
+
+        <div class="subject-block">
+            <span class="subject-name">Tarih (2 Saat)</span>
+            <table>
+                <tr><th style="background:transparent; border:none;"></th><th>1.</th><th>2.</th><th>3.</th></tr>
+                <tr><td class="row-label">Sınav</td><td>72</td><td></td><td></td></tr>
+                <tr><td colspan="3" class="puan-label">Puanı</td><td class="puan-val">72</td></tr>
+            </table>
+        </div>
+
+        <div class="subject-block">
+            <span class="subject-name">Yabancı Dil (4 Saat)</span>
+            <table>
+                <tr><th style="background:transparent; border:none;"></th><th>1.</th><th>2.</th><th>3.</th></tr>
+                <tr><td class="row-label">Sınav</td><td>100</td><td></td><td></td></tr>
+                <tr><td colspan="3" class="puan-label">Puanı</td><td class="puan-val">100</td></tr>
+            </table>
+        </div>
+
+        <div class="ortalama-footer">
+            <div class="ort-left">
+                <img src="icons/yaziliortalama.jpeg">
+                <div class="ort-text">
+                    <b style="color:#333">2. Dönem Not Ortalaması</b><br>
+                    Ders saati ağırlığına göre hesaplanmıştır
+                </div>
+            </div>
+            <div class="ort-val">75.75</div>
+        </div>
+    </div>
+
 </body>
 </html>
